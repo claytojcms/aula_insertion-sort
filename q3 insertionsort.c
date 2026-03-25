@@ -18,16 +18,20 @@ for (i = 1; i < n; i++) {
 chave = V[i];
 j = i;
 
-while (j > 0 && chave < V[j - 1]) {
+while (j > 0){
     comparacoes++;
+    if (chave < V[j - 1]){
     V[j] = V[j - 1];
     j--;
     movimentacoes++;
 }
-    comparacoes++;
+else
+    break;
+}
+    movimentacoes++;
     V[j] = chave;
 }
-printf("movimentacoes:%d\n  comparacoes:%d\n",movimentacoes,comparacoes);
+printf("movimentacoes:%d || comparacoes:%d\n",movimentacoes,comparacoes);
 }
 
 
@@ -38,24 +42,24 @@ printf("movimentacoes:%d\n  comparacoes:%d\n",movimentacoes,comparacoes);
         int n=5;
         int A[]={1,2,3,4,5};
         int B[]={5,4,3,2,1};
-        int C[]={6,1,9,7,3};
+        int C[]={5,1,4,2,3};
 
-        printf("VETOR A: Antes \n");
+        printf("VETOR A Antes: \n");
         imprimir_vetor(A,n);
-        printf("DEPOIS:\n");
         insertionSort(A,n);
+        printf("DEPOIS:\n");
         imprimir_vetor(A,n);
 
-        printf("VETOR B: ANTES \n");
+        printf("\nVETOR B ANTES: \n");
         imprimir_vetor(B,n);
-        printf("DEPOIS: \n");
         insertionSort(B,n);
+        printf("DEPOIS:\n");
         imprimir_vetor(B,n);
 
-        printf("VETOR C: ANTES \n");
+        printf("\nVETOR C ANTES: \n");
         imprimir_vetor(C,n);
-        printf("DEPOIS: \n");
         insertionSort(C,n);
+        printf("DEPOIS:\n");
         imprimir_vetor(C,n);
 
 
